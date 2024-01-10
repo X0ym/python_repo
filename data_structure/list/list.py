@@ -115,6 +115,10 @@ def ite():
     print()
 
 
+def matrix():
+    mat = []
+
+
 if __name__ == '__main__':
     # init_list()
     # add()
