@@ -83,7 +83,12 @@ def add():
     arr = list()
     arr.append(1)
 
+    arr.append([2, 3])
+
     print(len(arr))
+    print(arr)  # [1, [2, 3]]
+    arr.extend([4, 5])
+    print(arr)  # [1, [2, 3], 4, 5]
 
 
 def get():
@@ -121,6 +126,6 @@ def matrix():
 
 if __name__ == '__main__':
     # init_list()
-    # add()
+    add()
     # get()
-    ite()
+    # ite()

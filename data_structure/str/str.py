@@ -1,6 +1,7 @@
 """
 
 """
+from string import ascii_lowercase
 
 
 def char():
@@ -28,7 +29,18 @@ def str_func():
         cnt[ord(ch) - ord('a')] += 1
     print(cnt)
 
+    print('s' * 3)
+
+    l = []
+    l.append('s')
+    # l.append()
+    print(chr(ord('a') + 1) * 3)
+    print(ascii_lowercase[1] * 3)
+    l.append(ascii_lowercase[1] * 3)
+
+    print("".join(l))  # sbbb
+
 
 if __name__ == '__main__':
     str_func()
-    char()
+    # char()
