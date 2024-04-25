@@ -1,5 +1,24 @@
 """
 
+单字符检查
+    1. str.isalpha()
+    2. str.isalnum()
+    3. str.isdigit()
+    4. str.islower()
+    5. str.isupper()
+
+字符处理
+    str.lower() 字符串转小写
+    str.upper() 字符串转大写
+
+
+字符串反转
+    1. s[::-1]
+    2. 转 list 后 reverse，再转为 str
+        l = list(s)
+        l.reverse()
+        s2 = "".join(l)
+
 """
 from string import ascii_lowercase
 
@@ -41,6 +60,20 @@ def str_func():
     print("".join(l))  # sbbb
 
 
+def str_reverse():
+    s = 'hello world'
+    s1 = s[::-1]
+    # s[1] = 'a' #  'str' object does not support item assignment
+    print(s)
+    print(s1)
+
+    l = list(s)
+    l.reverse()
+    s2 = "".join(l)
+    print(s2)
+
+
 if __name__ == '__main__':
-    str_func()
+    # str_func()
     # char()
+    str_reverse()
