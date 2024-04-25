@@ -77,3 +77,18 @@ if __name__ == '__main__':
     # str_func()
     # char()
     str_reverse()
+
+    x1 = 10
+    s1 = str(x1)
+    print(s1)
+
+    y1 = 10.0
+    s2 = str(y1)
+    print(y1)
+
+    s3, s4 = "20", "20.1"
+    x2 = int(s3)
+    print(x2)
+
+    y2 = float(s4)
+    print(y2)
