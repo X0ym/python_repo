@@ -62,6 +62,13 @@ class Solution:
 
 if __name__ == '__main__':
     s = Solution()
-    nums = [1, 4, 2, 5, 3, 6, 4]
+    arr = [5, 7, 7, 8, 8, 10]
     t = 4
-    s.searchRange(nums, t)
+    ans = s.searchRange(arr, t)
+    print(ans)
+
+    idx = lower_bound2(arr, 1)
+    if idx == len(arr):
+        print("无解")
+    else:
+        print(idx)

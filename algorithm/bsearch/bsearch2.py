@@ -36,12 +36,12 @@ def check(mid: int, nums: List[int]) -> bool:
     pass
 
 
-def binary_search(l: int, r: int, nums: List[int]) -> int:
-    while l < r:
-        mid = l + r // 2
+def binary_search(left: int, right: int, nums: List[int]) -> int:
+    while left < right:
+        mid = left + right // 2
         # check()判断 mid 是否满足性质
-        if check(mid):
-            r = mid  # 满足取左区间
+        if check(mid, nums):
+            right = mid  # 满足取左区间
         else:
-            l = mid + 1  # 不满足取右区间
-    return l
+            left = mid + 1  # 不满足取右区间
+    return left
