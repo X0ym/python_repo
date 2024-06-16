@@ -10,3 +10,10 @@ Python 内置数据类型
 
 
 """
+
+nums = [1, 2, 3]
+n = len(nums)
+print(nums[n - 1])
+print(nums[-0])
+print(nums[-1])
+print(nums[-n])

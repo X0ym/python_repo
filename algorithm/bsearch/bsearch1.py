@@ -4,10 +4,18 @@
 from typing import List
 
 
-# 闭区间写法
+def check(nums: List[int], target: int) -> int:
+    pass
+
+
+# 闭区间写法 [left, right]
+# 循环不变量 check(left-1) == false check(right+1) == true
+# mid = (left + right) // 2
+# 循环退出条件 left+1 == right
+# 答案 left 或 right+1
 def lower_bound(nums: List[int], target: int) -> int:
-    left, right = 0, len(nums) - 1  # 闭区间 [left, right]
-    while left <= right:  # 区间不为空
+    left, right = 0, len(nums) - 1
+    while left <= right:
         # 循环不变量：
         # nums[left-1] < target
         # nums[right+1] >= target
@@ -19,7 +27,11 @@ def lower_bound(nums: List[int], target: int) -> int:
     return left  # 或者 right+1
 
 
-# 左闭右开区间写法
+# 左闭右开区间写法 [left, right)
+# 循环不变量 check(left-1) == false check(right) == true
+# mid = (left + right) // 2
+# 循环退出条件 left == right
+# 答案 left 或 right
 def lower_bound2(nums: List[int], target: int) -> int:
     left = 0
     right = len(nums)  # 左闭右开区间 [left, right)
@@ -29,13 +41,18 @@ def lower_bound2(nums: List[int], target: int) -> int:
         # nums[right] >= target
         mid = (left + right) // 2
         if nums[mid] < target:
-            left = mid + 1  # 范围缩小到 [mid+1, right)
+            left = mid + 1
         else:
-            right = mid  # 范围缩小到 [left, mid)
+            right = mid
+    # 退出时，left == right
     return left  # 或者 right
 
 
-# 开区间写法
+# 开区间写法 (left, right)
+# 循环不变量 check(left) == false check(right) == true
+# mid = (left + right) // 2
+# 循环退出条件 left + 1 == right
+# 答案 left+1 或 right
 def lower_bound3(nums: List[int], target: int) -> int:
     left, right = -1, len(nums)  # 开区间 (left, right)
     while left + 1 < right:  # 区间不为空
@@ -48,6 +65,39 @@ def lower_bound3(nums: List[int], target: int) -> int:
         else:
             right = mid  # 范围缩小到 (left, mid)
     return right  # 或者 left+1
+
+
+"""
+bool check(int x) {/* ... */} // 检查x是否满足某种性质
+
+// 区间分成 左半边不满足，右半边满足
+// 区间[l, r]被划分成[l, mid]和[mid + 1, r]时使用：
+int bsearch_1(int l, int r)
+{
+    while (l < r)
+    {
+        int mid = l + r >> 1;
+        // check()判断 mid 是否满足性质
+        if (check(mid)) r = mid; //满足取左区间
+        else l = mid + 1; //不满足取右区间
+    }
+    return l;
+}
+
+// 区间分成 左半边满足，右半边不满足
+// 区间[l, r]被划分成[l, mid - 1]和[mid, r]时使用：
+int bsearch_2(int l, int r)
+{
+    while (l < r)
+    {
+        int mid = l + r + 1 >> 1;
+        // check()判断mid是否满足性质
+        if (check(mid)) l = mid;//满足取右区间
+        else r = mid - 1;//不满足取左区间
+    }
+    return l;
+}
+"""
 
 
 class Solution:
