@@ -4,7 +4,6 @@ from typing import List
 # 查找最后一个小于等于 target 的数，不存在返回 -1
 # 示例：275. H 指数 II
 # https://leetcode.cn/problems/h-index-ii/description/
-
 class Solution:
     # 闭区间
     def hIndex1(self, citations: List[int]) -> int:
@@ -60,7 +59,7 @@ class Solution:
         return left
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     s = Solution()
     case = [0, 1, 3, 5, 6]
     ans = s.hIndex3(case)
