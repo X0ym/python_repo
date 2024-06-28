@@ -37,6 +37,7 @@ for i, x enumerate(list):
 
 
 4 更新元素
+list[i] = x
 
 5 删除元素
 - pop(pos) 参数 pos 可选。数字，指定需删除元素的位置。默认值 -1。
@@ -74,9 +75,13 @@ def init_list():
     arr5 = arr3.copy()
 
     # 列表推导式
-    arr6 = []
+    arr6 = [0 for _ in range(5)]
 
-    print(arr1, arr2, arr3, arr4, arr5)
+    print(arr1, arr2, arr3, arr4, arr5, arr6)
+
+    arr7 = [[0 for _ in range(3)] for _ in range(3)]
+    arr7[1][1] = 1
+    print(arr7)
 
 
 def add():
@@ -125,7 +130,7 @@ def matrix():
 
 
 if __name__ == '__main__':
-    # init_list()
+    init_list()
     add()
     # get()
     # ite()

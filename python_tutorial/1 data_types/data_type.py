@@ -17,3 +17,10 @@ print(nums[n - 1])
 print(nums[-0])
 print(nums[-1])
 print(nums[-n])
+
+# numbers to str
+print(str(1))
+print(str(1.1))
+
+# str to number
+print(int("1"), float("1.1"))
