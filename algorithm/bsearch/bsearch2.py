@@ -59,7 +59,7 @@ class Solution:
         return left
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     s = Solution()
     case = [0, 1, 3, 5, 6]
     ans = s.hIndex3(case)
